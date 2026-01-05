@@ -3,4 +3,6 @@ on: workflow_dispatch
 jobs: 
   call_the_worfklow:
     uses: kaniishk123/gitProdEnv/.github/workflows/main.yml@main
+    with:
+      int_value: ${{ inputs.int_value }}
     secrets: inherit

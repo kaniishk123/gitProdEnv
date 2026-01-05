@@ -1,6 +1,6 @@
 name: sample
 on: 
-  workflow_dispatch:
+  workflow_call:
     inputs:
       int_value:
         description: "choose a number between 1 and 2"

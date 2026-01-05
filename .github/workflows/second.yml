@@ -1,8 +1,16 @@
 name: testing workflow
-on: workflow_dispatch
-jobs: 
-  call_the_worfklow:
+on:
+  workflow_dispatch:
+    inputs:
+      int_value:
+        description: "choose a number between 1 and 2"
+        required: true
+        type: choice
+        options:
+          - "1"
+          - "2"
+jobs:
+  call_the_workflow:
     uses: kaniishk123/gitProdEnv/.github/workflows/main.yml@main
     with:
       int_value: ${{ inputs.int_value }}
-    secrets: inherit

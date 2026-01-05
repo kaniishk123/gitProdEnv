@@ -1,30 +1,22 @@
 name: sample
-on: 
+
+on:
   workflow_call:
     inputs:
       int_value:
         description: "choose a number between 1 and 2"
         required: true
-        type: choice
-        options:
-          - "1"
-          - "2"
+        type: string
+
 jobs:
   print_output_value:
     runs-on: ubuntu-latest
     steps:
       - name: print the output
         run: |
-          res=${{inputs.int_value}}
-          if [ "$res" -eq "1" ]; then
-            echo "chosen number is one"
+          res='${{ inputs.int_value }}'
+          if [ "$res" -eq 1 ]; then
+            echo "chosen number is 1"
           else
             echo "chosen number is 2"
           fi
-          
-          
-  
-        
-        
-              
-  

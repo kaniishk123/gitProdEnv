@@ -16,4 +16,4 @@ jobs:
     steps:
       - name: print the enivronment that the user entered
         run: |
-          echo "the user has requested to work on ${inputs.environment} environment"
+          echo "the user has requested to work on ${{inputs.environment}} environment"
